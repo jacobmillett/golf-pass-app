@@ -1,9 +1,8 @@
-// src/pages/CalendarsPage.tsx
 import { useState } from 'react';
+import { useAuth } from '../hooks/useAuth';
+import { useWeather } from '../hooks/useWeather';
 import Calendar from '../components/Calendar';
 import WeatherWidget from '../components/WeatherWidget';
-import { useWeather } from '../hooks/useWeather';
-import { useAuth } from '../hooks/useAuth';
 
 export const CalendarsPage = () => {
   const { weather, loading, error } = useWeather();
