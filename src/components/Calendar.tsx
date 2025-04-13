@@ -43,8 +43,8 @@ const Calendar: React.FC<CalendarProps> = ({ filters }) => {
     .join(', ');
 
   return (
-    <div>
-      <p className="mb-4">Showing calendars for: {activeCalendars || 'None selected'}</p>
+    <div className="rounded-xl overflow-hidden shadow border bg-white">
+    <p className="mb-4">Showing calendars for: {activeCalendars || 'None selected'}</p>
       <BigCalendar
         localizer={localizer}
         events={events}

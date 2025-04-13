@@ -23,6 +23,7 @@ export interface User {
   
   export interface WeatherData {
     temperature: number;
+    feelsLike: number;
     description: string;
     icon: string;
   }

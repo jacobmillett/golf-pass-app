@@ -9,7 +9,7 @@ export const useWeather = () => {
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    fetchWeather('American Fork')
+    fetchWeather()
       .then(setWeather)
       .catch(() => setError('Failed to fetch weather'))
       .finally(() => setLoading(false));
