@@ -1,5 +1,5 @@
 // src/pages/AdminPage.tsx
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import AdminPanel from '../components/AdminPanel';
 import { useAuth } from '../hooks/useAuth';
 import { useNavigate } from 'react-router-dom';
@@ -8,19 +8,22 @@ export const AdminPage = () => {
   const navigate = useNavigate();
   const { logout, user } = useAuth();
 
-  if (user?.role !== 'admin') {
-    navigate('/');
-    return null;
-  }
-
   const [users, setUsers] = useState([
     { id: '2', name: 'John Doe', permissions: { foxHollow: true, cedarHills: false, topgolf: true } },
     { id: '3', name: 'Jane Doe', permissions: { foxHollow: true, cedarHills: true, topgolf: false } },
   ]);
 
+  useEffect(() => {
+    if (user?.role !== 'admin') {
+      navigate('/');
+    }
+  }, [user, navigate]);
+
+  if (user?.role !== 'admin') return null;
+
   const addUser = (name: string) => {
-    setUsers([
-      ...users,
+    setUsers((prev) => [
+      ...prev,
       { id: Date.now().toString(), name, permissions: { foxHollow: false, cedarHills: false, topgolf: false } }
     ]);
   };
@@ -33,7 +36,6 @@ export const AdminPage = () => {
           Logout
         </button>
       </div>
-
       <AdminPanel users={users} addUser={addUser} />
     </div>
   );

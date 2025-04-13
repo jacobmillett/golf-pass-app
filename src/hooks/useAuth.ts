@@ -1,21 +1,19 @@
-// src/hooks/useAuth.ts
 import { useState } from 'react';
 import { User } from '../types/types';
 
+let currentUser: User | null = null;
+
 export const useAuth = () => {
-  const [user, setUser] = useState<User | null>(() => {
-    const savedUser = localStorage.getItem('user');
-    return savedUser ? JSON.parse(savedUser) : null;
-  });
+  const [user, setUser] = useState<User | null>(currentUser);
 
   const login = (userData: User) => {
+    currentUser = userData;
     setUser(userData);
-    localStorage.setItem('user', JSON.stringify(userData));
   };
 
   const logout = () => {
+    currentUser = null;
     setUser(null);
-    localStorage.removeItem('user');
   };
 
   return { user, login, logout };
