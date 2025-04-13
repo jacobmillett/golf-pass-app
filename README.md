@@ -1,46 +1,50 @@
-# Getting Started with Create React App
+# IS 542 React Project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Mind you not all of this is functional. I am going to continue this and actually use this. I just wanted to get the parts that were essential for this class in.
 
-## Available Scripts
+🏌️ Golf Pass Reservation App
 
-In the project directory, you can run:
+This is a single-page web application for managing golf pass reservations at three venues: Fox Hollow Golf Club, Cedar Hills Golf Club, and Topgolf in Vineyard. Built using **TypeScript**, **React**, and **Tailwind CSS**, the app allows users to view available reservation slots on a calendar, filter by course, and view the current weather in American Fork, Utah. Admin users can also manage user permissions.
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 💻 Features
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- ✅ **Login System**: Login as a regular user or an admin to access different views.
+- ✅ **Interactive Calendar**: Book reservations by clicking available time slots.
+- ✅ **Filter by Course**: Toggle between Fox Hollow, Cedar Hills, and Topgolf.
+- ✅ **Weather Widget**: Displays current weather using the OpenWeatherMap API.
+- ✅ **Admin Panel**: Add new users and assign visibility permissions per calendar.
+- ✅ **Persistent Data**: User bookings are saved using localStorage.
+- ✅ **Responsive Design**: Fully styled with Tailwind CSS for mobile and desktop.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🔧 Technologies Used
 
-### `npm run build`
+- ⚛️ React (with functional components and hooks)
+- 📘 TypeScript (with strict types and interfaces)
+- 🌤️ OpenWeatherMap API (for real-time weather in American Fork, UT)
+- 🎨 Tailwind CSS (custom theme for a clean, golf-brand aesthetic)
+- 🗂️ LocalStorage (for event persistence across reloads)
+- 📅 react-big-calendar (calendar component for slot management)
+- 🔁 React Router (for routing between login, calendar, and admin pages)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+---
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+src/
+├── components/         // Reusable UI components (Calendar, WeatherWidget)
+├── pages/              // Routed pages (LoginPage, CalendarsPage, AdminPage)
+├── hooks/              // Custom hooks (useWeather, useAuth)
+├── utils/              // API utilities
+├── types/              // Shared TypeScript interfaces
 
-### `npm run eject`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## 🧪 How to Run Locally
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/jacobmillett/golf-pass-app.git
+   cd golf-pass-app
