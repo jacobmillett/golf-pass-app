@@ -1,8 +1,8 @@
 // src/pages/AdminPage.tsx
+import { useNavigate } from 'react-router-dom';
+import { useAuth } from '../hooks/useAuth';
 import { useState, useEffect } from 'react';
 import AdminPanel from '../components/AdminPanel';
-import { useAuth } from '../hooks/useAuth';
-import { useNavigate } from 'react-router-dom';
 
 export const AdminPage = () => {
   const navigate = useNavigate();
@@ -29,14 +29,22 @@ export const AdminPage = () => {
   };
 
   return (
-    <div className="container mx-auto p-4">
-      <div className="flex justify-between items-center">
-        <h1 className="text-2xl font-bold mb-4">Admin Panel</h1>
-        <button onClick={logout} className="bg-red-500 text-white px-4 py-2 rounded">
-          Logout
-        </button>
+    <div className="min-h-screen bg-golf-bg p-6">
+      <div className="max-w-4xl mx-auto bg-white p-8 rounded-xl shadow-soft space-y-6">
+        <div className="flex justify-between items-center">
+          <h1 className="text-3xl font-bold text-golf-green">Admin Panel</h1>
+          <button
+            onClick={() => {
+              logout();
+              navigate('/');
+            }}
+            className="bg-red-600 hover:bg-red-700 text-white px-4 py-2 rounded"
+          >
+            Logout
+          </button>
+        </div>
+        <AdminPanel users={users} addUser={addUser} />
       </div>
-      <AdminPanel users={users} addUser={addUser} />
     </div>
   );
 };
