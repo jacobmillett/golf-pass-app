@@ -1,15 +1,15 @@
 {
   "files": {
     "main.css": "/golf-pass-app/static/css/main.246bc1ae.css",
-    "main.js": "/golf-pass-app/static/js/main.c6e76ebb.js",
+    "main.js": "/golf-pass-app/static/js/main.cfa62101.js",
     "static/js/453.cbf22f38.chunk.js": "/golf-pass-app/static/js/453.cbf22f38.chunk.js",
     "index.html": "/golf-pass-app/index.html",
     "main.246bc1ae.css.map": "/golf-pass-app/static/css/main.246bc1ae.css.map",
-    "main.c6e76ebb.js.map": "/golf-pass-app/static/js/main.c6e76ebb.js.map",
+    "main.cfa62101.js.map": "/golf-pass-app/static/js/main.cfa62101.js.map",
     "453.cbf22f38.chunk.js.map": "/golf-pass-app/static/js/453.cbf22f38.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.246bc1ae.css",
-    "static/js/main.c6e76ebb.js"
+    "static/js/main.cfa62101.js"
   ]
 }
